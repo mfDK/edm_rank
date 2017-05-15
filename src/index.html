@@ -12,18 +12,29 @@
     <script src="controllers/mainCtrl.js"></script>
 </head>
 <body ng-app="newApp" ng-controller="mainController">
-    <div class="search-form">
-        <form name="search" class="search">
-            <label for="searchTerm">Search Artist</label>
-            <input type="text" name="artist" ng-model="searchTerm">
-            <button ng-click="doSearch(searchTerm)">Search</button>
-        </form>
-    </div>
-    <div>{{ searchTerm }}</div>
 
-    <div class="artist">
-        {{ artist }}
+    <div class="container">
+        <div class="col-md-6 col-md-offset-4">
+            <form name="search" class="form-group form-inline" ng-submit="doSearch(searchTerm)">
+                <label for="searchTerm">Search Artist</label>
+                <input type="text" name="artist" ng-model="searchTerm" class="form-control">
+                <button type="submit" class="btn btn-default">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class="jumbotron text-center">
+            <img src="{{ img }}" class="img-circle">
+            <h3>{{ name }}</h3>
+            <p>{{ followers }}</p>
+            <p>{{ artistId }}</p>
+            <ul class="list-group col-sm-3 col-sm-offset-4">
+                <li class="list-group-item" ng-repeat="genre in genres">{{ genre }}</li>
+            </ul>
+        </div>
     </div>
+
 
 
 </body>
