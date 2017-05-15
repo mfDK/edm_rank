@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../public/assets/libs/angular/angular.min.js"></script>
+    <script src="../public/assets/libs/angular-animate/angular-animate.min.js"></script>
+    <script src="../public/assets/libs/angular-resource/angular-resource.min.js"></script>
+    <link rel="stylesheet" href="../public/assets/libs/bootstrap/dist/css/bootstrap.css">
+    <script src="controllers/mainCtrl.js"></script>
+</head>
+<body ng-app="newApp" ng-controller="mainController">
+    <div class="search-form">
+        <form name="search" class="search">
+            <label for="searchTerm">Search Artist</label>
+            <input type="text" name="artist" ng-model="searchTerm">
+            <button ng-click="doSearch(searchTerm)">Search</button>
+        </form>
+    </div>
+    <div>{{ searchTerm }}</div>
+
+    <div class="artist">
+        {{ artist }}
+    </div>
+
+
+</body>
+</html>

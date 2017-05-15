@@ -1,0 +1,25 @@
+{
+  "name": "angular-video",
+  "authors": [
+    "Danny Kim <dkim7474@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "angular-animate": "^1.6.4",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.2.1"
+  }
+}
