@@ -35,6 +35,7 @@
     </div>
 
     <div class="related-artists">
+        <button type="button" class="btn btn-default" ng-if="followers" ng-click="rankArtists(relatedArtists, searchedArtist)">Rank</button>
         <div class="col-sm-6 col-md-4" ng-repeat="artist in relatedArtists">
             <div class="thumbnail">
                 <img src="{{ artist.images[1].url }}" alt="">
