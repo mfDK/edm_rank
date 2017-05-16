@@ -2,10 +2,20 @@
     width: 425px;
 }
 
-.thumbnail {
+#rank-btn {
     text-align: center;
-    .thumb-img {
-        height: 320px;
-        width: 320px;
+    margin-bottom: 15px;
+    button {
+        width: 300px;
+    }
+}
+
+.related-artists {
+    .thumbnail {
+        text-align: center;
+        .thumb-img {
+            height: 320px;
+            width: 320px;
+        }
     }
 }

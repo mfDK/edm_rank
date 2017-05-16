@@ -1,9 +1,15 @@
 #search-input {
   width: 425px; }
 
-.thumbnail {
+#rank-btn {
+  text-align: center;
+  margin-bottom: 15px; }
+  #rank-btn button {
+    width: 300px; }
+
+.related-artists .thumbnail {
   text-align: center; }
-  .thumbnail .thumb-img {
+  .related-artists .thumbnail .thumb-img {
     height: 320px;
     width: 320px; }
 
