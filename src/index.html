@@ -27,11 +27,22 @@
         <div class="jumbotron text-center">
             <img src="{{ img }}" class="img-circle">
             <h3>{{ name }}</h3>
-            <p>{{ followers }}</p>
-            <p>{{ artistId }}</p>
+            <p ng-if="followers">followers: {{ followers }}</p>
             <ul class="list-group col-sm-3 col-sm-offset-4">
                 <li class="list-group-item" ng-repeat="genre in genres">{{ genre }}</li>
             </ul>
+        </div>
+    </div>
+
+    <div class="related-artists">
+        <div class="col-sm-6 col-md-4" ng-repeat="artist in relatedArtists">
+            <div class="thumbnail">
+                <img src="{{ artist.images[1].url }}" alt="">
+                <div class="caption">
+                    <h3>{{ artist.name }}</h3>
+                    <p>followers: {{ artist.followers.total }}</p>
+                </div>
+            </div>
         </div>
     </div>
 

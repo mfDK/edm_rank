@@ -15,7 +15,18 @@ angular.module('newApp', ['ngResource'])
                 $scope.followers = response.data.artists.items[0].followers.total;
                 $scope.artistId = response.data.artists.items[0].id;
                 $scope.searchTerm = "";
+                $scope.getRelatedArtists();
             })
         };
+
+        $scope.getRelatedArtists = function() {
+            $http({
+                method: 'GET',
+                url: 'https://api.spotify.com/v1/artists/' + $scope.artistId + '/related-artists'
+            })
+            .then(function(response) {
+                $scope.relatedArtists = $filter('limitTo')(response.data.artists, '5');
+            })
+        }
 
     });
