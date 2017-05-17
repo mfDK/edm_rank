@@ -1,5 +1,5 @@
 angular.module('spotifyService', [])
-    .factory('Artist', function($http, $filter) {
+    .factory('Spotify', function($http, $filter) {
         var artistFactory = {};
 
         artistFactory.searchArtist = function(searchTerm) {

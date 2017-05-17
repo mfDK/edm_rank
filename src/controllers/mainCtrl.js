@@ -1,5 +1,5 @@
 angular.module('newApp', ['ngResource', 'spotifyService'])
-    .controller('mainController', function($scope, $http, $filter, Artist) {
+    .controller('mainController', function($scope, $http, $filter, Spotify) {
 
         $scope.searchTerm = "";
 
@@ -9,7 +9,7 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
         }
 
         $scope.submitSearch = function() {
-            Artist.searchArtist($scope.searchTerm)
+            Spotify.searchArtist($scope.searchTerm)
                 .then(function(data) {
                     $scope.data = data;
                     $scope.genres = $filter('limitTo')(data.artists.items[0].genres, '5');
@@ -24,7 +24,7 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
         }
 
         $scope.getRelatedArtists = function(artistId) {
-            Artist.relatedArtists(artistId)
+            Spotify.relatedArtists(artistId)
                 .then(function(response) {
                     $scope.relatedArtists = $filter('limitTo')(response, '5');
                 })
@@ -32,14 +32,10 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
 
         $scope.rankArtists = function(relatedArtists, searchedArtist) {
             relatedArtists.push(searchedArtist);
-
             relatedArtists.sort(function(a, b) {
                 return a.followers.total - b.followers.total;
             })
-
             relatedArtists.reverse();
-
-            console.log(relatedArtists);
         }
 
     });
