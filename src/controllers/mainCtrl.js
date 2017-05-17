@@ -18,19 +18,16 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
                     $scope.followers = data.artists.items[0].followers.total;
                     $scope.artistId = data.artists.items[0].id;
                     $scope.searchedArtist = data.artists.items[0];
-                    $scope.getRelatedArtists();
+                    $scope.getRelatedArtists($scope.artistId);
                     $scope.searchTerm = "";
                 })
         }
 
-        $scope.getRelatedArtists = function() {
-            $http({
-                method: 'GET',
-                url: 'https://api.spotify.com/v1/artists/' + $scope.artistId + '/related-artists'
-            })
-            .then(function(response) {
-                $scope.relatedArtists = $filter('limitTo')(response.data.artists, '5');
-            })
+        $scope.getRelatedArtists = function(artistId) {
+            Artist.relatedArtists(artistId)
+                .then(function(response) {
+                    $scope.relatedArtists = $filter('limitTo')(response, '5');
+                })
         }
 
         $scope.rankArtists = function(relatedArtists, searchedArtist) {
