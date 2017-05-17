@@ -1,8 +1,20 @@
-angular.module('newApp', ['ngResource'])
-    .controller('mainController', function($scope, $http, $filter) {
+angular.module('newApp', ['ngResource', 'spotifyService'])
+    .controller('mainController', function($scope, $http, $filter, Artist) {
+
         $scope.searchTerm = "";
 
+        $scope.validSearch = function(searchTerm) {
+            var regexInput = /\W/;
+            return regexInput.test(searchTerm);
+        }
+
+        Artist.searchArtist($scope.searchTerm)
+            .then(function(aristData) {
+                console.log(artistData);
+            })
+
         $scope.doSearch = function(searchTerm) {
+            $scope.validSearch(searchTerm);
             $http({
                 method: 'GET',
                 url: 'https://api.spotify.com/v1/search?q=' + searchTerm + '&type=artist'
@@ -17,6 +29,9 @@ angular.module('newApp', ['ngResource'])
                 $scope.searchedArtist = response.data.artists.items[0];
                 $scope.searchTerm = "";
                 $scope.getRelatedArtists();
+            })
+            .catch(function(error) {
+                console.log(error);
             })
         };
 
