@@ -25,7 +25,7 @@
               </button>
               <a class="navbar-brand" href="#">EDM Rank</a>
             </div>
-            <form name="search" class="navbar-form text-center" ng-submit="doSearch(searchTerm)">
+            <form name="search" class="navbar-form text-center" ng-submit="submitSearch()">
                 <div class="input-group">
                     <input type="text" name="artist" ng-model="searchTerm" class="form-control" id="search-input" required placeholder="Enter Artist Name">
                     <span class="input-group-btn">
@@ -42,7 +42,7 @@
         <p>There is a invalid patterns happening</p>
     </div>
 
-    <div class="container" ng-show="result">
+    <div class="container" ng-show="data">
         <div class="jumbotron text-center">
             <img src="{{ img }}" class="img-circle">
             <h3>{{ name }}</h3>

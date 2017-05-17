@@ -8,32 +8,20 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
             return regexInput.test(searchTerm);
         }
 
-        Artist.searchArtist($scope.searchTerm)
-            .then(function(aristData) {
-                console.log(artistData);
-            })
-
-        $scope.doSearch = function(searchTerm) {
-            $scope.validSearch(searchTerm);
-            $http({
-                method: 'GET',
-                url: 'https://api.spotify.com/v1/search?q=' + searchTerm + '&type=artist'
-            })
-            .then(function(response) {
-                $scope.result = response.data.artists;
-                $scope.genres = $filter('limitTo')(response.data.artists.items[0].genres, '5');
-                $scope.name = response.data.artists.items[0].name;
-                $scope.img = response.data.artists.items[0].images[1].url;
-                $scope.followers = response.data.artists.items[0].followers.total;
-                $scope.artistId = response.data.artists.items[0].id;
-                $scope.searchedArtist = response.data.artists.items[0];
-                $scope.searchTerm = "";
-                $scope.getRelatedArtists();
-            })
-            .catch(function(error) {
-                console.log(error);
-            })
-        };
+        $scope.submitSearch = function() {
+            Artist.searchArtist($scope.searchTerm)
+                .then(function(data) {
+                    $scope.data = data;
+                    $scope.genres = $filter('limitTo')(data.artists.items[0].genres, '5');
+                    $scope.name = data.artists.items[0].name;
+                    $scope.img = data.artists.items[0].images[1].url;
+                    $scope.followers = data.artists.items[0].followers.total;
+                    $scope.artistId = data.artists.items[0].id;
+                    $scope.searchedArtist = data.artists.items[0];
+                    $scope.getRelatedArtists();
+                    $scope.searchTerm = "";
+                })
+        }
 
         $scope.getRelatedArtists = function() {
             $http({
