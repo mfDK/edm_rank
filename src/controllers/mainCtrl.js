@@ -26,12 +26,11 @@ angular.module('newApp', ['ngResource', 'spotifyService'])
         $scope.getRelatedArtists = function(artistId) {
             Spotify.relatedArtists(artistId)
                 .then(function(response) {
-                    $scope.relatedArtists = $filter('limitTo')(response, '5');
+                    $scope.relatedArtists = $filter('limitTo')(response, '6');
                 })
         }
 
-        $scope.rankArtists = function(relatedArtists, searchedArtist) {
-            relatedArtists.push(searchedArtist);
+        $scope.rankArtists = function(relatedArtists) {
             relatedArtists.sort(function(a, b) {
                 return a.followers.total - b.followers.total;
             })

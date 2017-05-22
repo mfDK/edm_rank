@@ -55,7 +55,7 @@
             </div>
         </div>
         <div id="rank-btn">
-            <button type="button" class="btn btn-primary" ng-if="data" ng-click="rankArtists(relatedArtists, searchedArtist)">Rank</button>
+            <button type="button" class="btn btn-primary" ng-if="data" ng-click="rankArtists(relatedArtists)">Sort by Followers</button>
         </div>
         <div class="related-artists">
             <h2 class="text-center">Related Artists</h2>
@@ -64,7 +64,7 @@
                     <img src="{{ artist.images[1].url }}" alt="" class="thumb-img">
                     <div class="caption">
                         <h3>{{ artist.name }}</h3>
-                        <p>followers: {{ artist.followers.total }}</p>
+                        <p>Followers: {{ artist.followers.total }}</p>
                     </div>
                 </div>
             </div>
