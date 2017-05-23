@@ -16,5 +16,12 @@ angular.module('spotifyService', [])
                         });
         }
 
+        artistFactory.getTopTracks = function(artistId) {
+            return $http.get('https://api.spotify.com/v1/artists/' + artistId + '/top-tracks?country=US')
+                        .then(function(response) {
+                            return response.data.tracks;
+                        });
+        }
+
         return artistFactory;
     })
