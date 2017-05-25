@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../public/assets/libs/angular/angular.min.js"></script>
-    <script src="../public/assets/libs/angular-animate/angular-animate.min.js"></script>
-    <script src="../public/assets/libs/angular-resource/angular-resource.min.js"></script>
+    <script src="../public/assets/libs/angular/angular.js"></script>
+    <script src="../public/assets/libs/angular-animate/angular-animate.js"></script>
+    <script src="../public/assets/libs/angular-resource/angular-resource.js"></script>
     <link rel="stylesheet" href="../public/assets/libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../public/assets/css/main.css">
     <script src="controllers/mainCtrl.js"></script>
@@ -55,18 +55,18 @@
             </div>
         </div>
         <div id="rank-btn">
-            <button type="button" class="btn btn-primary" ng-click="rankArtists(relatedArtists)">Sort by Followers</button>
+            <button type="button" class="btn btn-primary" ng-click="sortByFollowers(relatedArtists)">Sort by Followers</button>
             <button type="button" class="btn btn-primary" ng-click="getTopTracks(artistId)">Top Tracks</button>
         </div>
         <div class="related-artists">
             <h2 class="text-center">Related Artists</h2>
             <div class="col-sm-6 col-md-4" ng-repeat="artist in relatedArtists">
                 <div class="thumbnail">
-                    <img src="{{ artist.images[1].url }}" alt="" class="thumb-img">
+                    <img src="{{ artist.images[1].url }}" class="thumb-img">
                     <div class="caption">
                         <h3>{{ artist.name }}</h3>
                         <p>Followers: {{ artist.followers.total | number:0 }}</p>
-                        <p><button class="btn btn-primary" ng-click="getTopTracks(artist.id)">Top Tracks</button></p>
+                        <p><button class="btn btn-primary">Info</button></p>
                     </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ angular.module('newApp', ['ngResource', 'spotifyService', 'ngAnimate'])
                 })
         }
 
-        $scope.rankArtists = function(relatedArtists) {
+        $scope.sortByFollowers = function(relatedArtists) {
             relatedArtists.sort(function(a, b) {
                 return a.followers.total - b.followers.total;
             })
