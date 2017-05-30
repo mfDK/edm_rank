@@ -39,22 +39,28 @@
         </div>
     </nav>
 
-    <div class="video-list">
-        <ul>
-            <li class="video-item" ng-repeat="result in $ctrl.results">
-                <div class="media">
-                  <div class="media-left">
-                    <a href="#">
-                      <img class="media-object" src="{{ result.snippet.thumbnails.default.url }}" alt="...">
-                    </a>
-                  </div>
-                  <div class="media-body">
-                    <h4 class="media-heading">{{ result.snippet.title }}</h4>
-                    <p>{{ result.snippet.description }}</p>
-                  </div>
-                </div>
-            </li>
-        </ul>
+    <div class="player">
+        <div class="video-container col-md-8">
+            <iframe src="https://www.youtube.com/embed/Wz8CrJfiRmM" allowfullscreen></iframe>
+        </div>
+
+        <div class="video-list-container col-md-4">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="result in $ctrl.results">
+                    <div class="media">
+                      <div class="media-left">
+                        <a href="#">
+                          <img class="media-object" src="{{ result.snippet.thumbnails.default.url }}" alt="...">
+                        </a>
+                      </div>
+                      <div class="media-body">
+                        <h4 class="media-heading">{{ result.snippet.title }}</h4>
+                        <p>{{ result.snippet.description }}</p>
+                      </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
 
 </body>

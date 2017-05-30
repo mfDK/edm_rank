@@ -21,7 +21,7 @@
                 params: {
                     'maxResults': '10',
                     'part': 'snippet',
-                    'q': searchInput,
+                    'q': searchInput + ' live set',
                     'type': 'video',
                     'key': api_key
                 }

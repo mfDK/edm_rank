@@ -14,6 +14,7 @@
             YouTube.search(input)
                 .then(function(response) {
                     vm.results = response;
+                    vm.formData.input = "";
                     return vm.results;
                 })
         }
