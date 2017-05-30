@@ -7,5 +7,5 @@
             'searchCtrl',
             'youTubeService'
         ]);
-        
+
 })();
