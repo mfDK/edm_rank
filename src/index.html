@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="newApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +10,12 @@
     <script src="../public/assets/libs/angular-resource/angular-resource.js"></script>
     <link rel="stylesheet" href="../public/assets/libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../public/assets/css/main.css">
-    <script src="controllers/mainCtrl.js"></script>
-    <script src="services/mainService.js"></script>
+    <script src="./app.modules.js"></script>
+    <script src="controllers/searchCtrl.js"></script>
+    <script src="services/youTubeService.js"></script>
 </head>
-<body ng-app="newApp" ng-controller="mainController">
-    <nav class="navbar navbar-inverse">
+<body>
+    <nav class="navbar navbar-inverse" ng-controller="SearchController as $ctrl">
         <div class="container-fluid">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -25,9 +26,9 @@
               </button>
               <a class="navbar-brand" href="#">EDM Rank</a>
             </div>
-            <form name="search" class="navbar-form text-center" ng-submit="submitSearch()">
+            <form name="search" class="navbar-form text-center" ng-submit="$ctrl.search($ctrl.formData.input)">
                 <div class="input-group">
-                    <input type="text" name="artist" ng-model="searchTerm" class="form-control" id="search-input" required placeholder="Enter Artist Name">
+                    <input type="text" name="artist" ng-model="$ctrl.formData.input" class="form-control" id="search-input" required placeholder="Enter Artist Name">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -38,11 +39,7 @@
         </div>
     </nav>
 
-    <div ng-show="validSearch(searchTerm)">
-        <p>There is a invalid patterns happening</p>
-    </div>
-
-    <div class="container" ng-show="data">
+    <!-- <div class="container" ng-show="data">
         <div class="jumbotron text-center">
             <img src="{{ img }}" class="img-circle">
             <h3>{{ name }}</h3>
@@ -71,6 +68,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 </html>
