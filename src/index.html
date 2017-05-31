@@ -25,7 +25,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">EDM Rank</a>
+              <a class="navbar-brand" href="#">SetSearch</a>
             </div>
             <form name="search" class="navbar-form text-center" ng-submit="$ctrl.videoSearch($ctrl.formData.input)">
                 <div class="input-group">
@@ -45,18 +45,18 @@
             <iframe ng-src="{{ $ctrl.embed }}" allowfullscreen></iframe>
         </div>
 
-        <div class="video-list-container col-md-4">
+        <div class="video-list-container col-md-4 col-sm-8">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="result in $ctrl.results">
                     <div class="media">
                       <div class="media-left">
                         <a href="#">
-                          <img class="media-object" src="{{ result.snippet.thumbnails.default.url }}">
+                          <img class="media-object" ng-src="{{ result.snippet.thumbnails.default.url }}">
                         </a>
                       </div>
-                      <div class="media-body">
+                      <div class="media-body media-right">
                         <h4 class="media-heading">{{ result.snippet.title }}</h4>
-                        <p>{{ result.snippet.description }}</p>
+                        <p class="media-description">{{ result.snippet.description }}</p>
                       </div>
                     </div>
                 </li>
