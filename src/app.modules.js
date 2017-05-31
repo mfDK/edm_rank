@@ -4,6 +4,7 @@
     angular
         .module('newApp', [
             'ngResource',
+            'ngSanitize',
             'searchCtrl',
             'youTubeService'
         ]);
