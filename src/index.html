@@ -27,9 +27,9 @@
               </button>
               <a class="navbar-brand" href="#">SetSearch</a>
             </div>
-            <form name="search" class="navbar-form text-center" ng-submit="$ctrl.videoSearch($ctrl.formData.input)">
+            <form name="search" class="navbar-form text-center search-form" ng-submit="$ctrl.videoSearch($ctrl.formData.input)">
                 <div class="input-group">
-                    <input type="text" name="artist" ng-model="$ctrl.formData.input" class="form-control" id="search-input" required placeholder="Enter Artist Name">
+                    <input type="text" name="artist" ng-model="$ctrl.formData.input" class="form-control search-input" required placeholder="Enter Artist Name">
                     <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
