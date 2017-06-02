@@ -4,8 +4,7 @@
 
 .player .video-container {
   height: 515px;
-  max-width: 65%;
-  min-width: 316px; }
+  max-width: 65%; }
   .player .video-container iframe {
     width: 100%;
     height: 100%;
