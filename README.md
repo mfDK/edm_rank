@@ -1,19 +1,8 @@
 # SetSearch
 
-## Install
-
-```
-```
-
 ## Usage
 
 ```
+bower install
+npm install
 ```
-
-## Contribute
-
-PRs accepted.
-
-## License
-
-MIT © Richard McRichface
