@@ -41,11 +41,11 @@
     </nav>
 
     <div class="player">
-        <div class="video-container col-md-8">
+        <div class="video-container col-md-8 col-lg-8">
             <iframe ng-src="{{ $ctrl.embed }}" allowfullscreen></iframe>
         </div>
 
-        <div class="video-list-container col-md-4 col-sm-8">
+        <div class="video-list-container col-md-8 col-md-4">
             <ul class="list-group">
                 <li class="list-group-item" ng-click="$ctrl.activeVideo($index, this)" ng-repeat="result in $ctrl.results" ng-class="{active: $ctrl.active === $index}">
                     <div class="media">
