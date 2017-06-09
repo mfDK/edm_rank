@@ -1,5 +1,5 @@
 (function() {
-    'use strict'
+    'use strict';
 
     angular
         .module('youTubeService', ['ngResource'])
@@ -28,7 +28,7 @@
             })
             .then(function(response) {
                 return response.data.items;
-            })
+            });
         }
 
     }

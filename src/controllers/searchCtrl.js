@@ -1,5 +1,5 @@
 (function() {
-    'use strict'
+    'use strict';
 
     angular
         .module('searchCtrl', ['youTubeService', 'ngSanitize'])
@@ -27,12 +27,13 @@
                     vm.formData.input = "";
                     vm.embed = $sce.trustAsResourceUrl(embedUrl + response[0].id.videoId);
                     return vm.results;
-                })
+                });
         }
 
         function activeVideo(element, info) {
             vm.active = element;
-            return vm.embed = $sce.trustAsResourceUrl(embedUrl + info.result.id.videoId);
+            vm.embed = $sce.trustAsResourceUrl(embedUrl + info.result.id.videoId);
+            return vm.embed;
         }
 
     }

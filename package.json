@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.15.3"
+    "express": "^4.15.3",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.4"
   }
 }
