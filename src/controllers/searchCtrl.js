@@ -2,8 +2,10 @@
     'use strict';
 
     angular
-        .module('searchCtrl', ['youTubeService', 'ngSanitize'])
+        .module('setSearch')
         .controller('SearchController', SearchController);
+
+    SearchController.$inject = ['YouTube', '$sce'];
 
     function SearchController(YouTube, $sce) {
         var vm = this;
