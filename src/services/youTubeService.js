@@ -2,8 +2,10 @@
     'use strict';
 
     angular
-        .module('youTubeService', ['ngResource'])
+        .module('setSearch')
         .factory('YouTube', YouTube);
+
+    YouTube.$inject = ['$http'];
 
     function YouTube($http) {
         var url = 'https://www.googleapis.com/youtube/v3/search';
